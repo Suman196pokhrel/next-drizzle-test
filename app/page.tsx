@@ -36,22 +36,25 @@ export default function Home() {
 
 
   return (
-    <main className="flex flex-col min-h-screen  p-2 space-y-20">
+    <main className="flex flex-col min-h-screen  p-2 space-y-32">
       <NavBar />
 
-      <div className=" rounded-lg flex flex-col gap-20 p-10">
-        <SearchBar todoData={todos} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <section className=" rounded-lg flex  w-full justify-center ">
 
-        <div className="flex flex-col gap-5">
-          <CardsControl todoData={todos} />
+        <div className="flex flex-col  gap-20 p-10  w-full xl:w-5/6">
+          <SearchBar todoData={todos} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+
+          <div className="flex flex-col gap-7">
+            <CardsControl todoData={todos} />
 
 
-          {!isFetching && todos && <Cards todoData={todos} searchQuery={searchQuery} />}
+            {!isFetching && todos && <Cards todoData={todos} searchQuery={searchQuery} />}
 
-          {isFetching && <CardsSkeleton />}
+            {isFetching && <CardsSkeleton />}
+          </div>
+
         </div>
-
-      </div>
+      </section>
     </main>
   );
 }

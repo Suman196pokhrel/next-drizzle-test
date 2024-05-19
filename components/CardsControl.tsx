@@ -34,7 +34,7 @@ const CardsControl = ({
                         </Button>
                     </TooltipTrigger>
                     <TooltipContent>
-                        <p>Create todo</p>
+                        <p className=" font-medium">Create new todo</p>
                     </TooltipContent>
                 </Tooltip>
 
@@ -48,7 +48,7 @@ const CardsControl = ({
 
                 {todoData ? (
                     <>
-                        <ToggleGroup type="single" value="cards" className="border-2 rounded-md ">
+                        <ToggleGroup type="single" value={viewMode} onValueChange={(value) => setViewMode(value)} className="border-2 rounded-md ">
 
 
                             <ToggleGroupItem value="cards">

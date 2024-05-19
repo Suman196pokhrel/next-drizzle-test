@@ -42,7 +42,7 @@ export default function Home() {
       <div className="border-2 rounded-lg flex flex-col gap-16 p-10">
         <SearchBar todoData={todos} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
-        <CardsControl />
+        <CardsControl todoData={todos} />
 
 
         {!isFetching && todos && <Cards todoData={todos} searchQuery={searchQuery} />}

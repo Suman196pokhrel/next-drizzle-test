@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Buy groceries",
+        "description": "Purchase milk, eggs, bread, and fruit from the supermarket. Ensure that the milk is low-fat and the bread is whole grain. Also, get some fresh seasonal fruits and vegetables. Don't forget to check for any discounts or special offers available.",
+        "dueDate": "2024-05-20",
+        "status": "Pending",
+        "priority": "High"
+    },
+    {
+        "id": 2,
+        "title": "Attend meeting",
+        "description": "Zoom call with the project team at 10 AM to discuss the upcoming milestones. Prepare the necessary reports and data to present. Make sure to review the meeting agenda beforehand. Follow up with team members on their assigned tasks.",
+        "dueDate": "2024-05-21",
+        "status": "Completed",
+        "priority": "Medium"
+    },
+    {
+        "id": 3,
+        "title": "Finish report",
+        "description": "Complete the annual report and send it to the manager by the end of the day. Include all relevant statistics and analysis. Ensure that the report is thoroughly proofread and formatted correctly. Add any supplementary information that might be helpful.",
+        "dueDate": "2024-05-22",
+        "status": "InProgress",
+        "priority": "High"
+    },
+    {
+        "id": 4,
+        "title": "Call plumber",
+        "description": "Fix the kitchen sink leakage by contacting a professional plumber. Describe the issue in detail and set up an appointment at a convenient time. Make sure to clear the area under the sink before the plumber arrives. Check the plumber's reviews and credentials.",
+        "dueDate": "2024-05-23",
+        "status": "Pending",
+        "priority": "Low"
+    },
+    {
+        "id": 5,
+        "title": "Read book",
+        "description": "Finish reading 'Atomic Habits' by James Clear. Focus on the chapters discussing habit formation and productivity. Take notes on key points and actionable advice. Reflect on how to apply these concepts to your daily routine to improve efficiency.",
+        "dueDate": "2024-05-24",
+        "status": "Pending",
+        "priority": "Low"
+    },
+    {
+        "id": 6,
+        "title": "Exercise",
+        "description": "Complete a 30-minute workout session focusing on cardio and strength training. Start with a warm-up to prevent injuries. Follow a structured plan that includes various exercises. Cool down with some stretching exercises to relax the muscles.",
+        "dueDate": "2024-05-25",
+        "status": "Pending",
+        "priority": "Medium"
+    },
+    {
+        "id": 7,
+        "title": "Prepare presentation",
+        "description": "Create slides for the upcoming client meeting. Highlight the main achievements and future plans. Ensure the slides are visually appealing and easy to understand. Rehearse the presentation to maintain a smooth flow during the actual meeting.",
+        "dueDate": "2024-05-26",
+        "status": "InProgress",
+        "priority": "High"
+    },
+    {
+        "id": 8,
+        "title": "Grocery shopping",
+        "description": "Restock the pantry with essentials such as rice, pasta, and canned goods. Check the current inventory to avoid overbuying. Look for organic and healthy options whenever possible. Plan meals for the week to ensure you purchase all necessary ingredients.",
+        "dueDate": "2024-05-27",
+        "status": "Pending",
+        "priority": "High"
+    },
+    {
+        "id": 9,
+        "title": "Car maintenance",
+        "description": "Take the car to the service center for routine maintenance. This includes oil change, tire rotation, and brake inspection. Make sure to mention any specific issues or unusual noises. Keep track of the service schedule to ensure timely upkeep.",
+        "dueDate": "2024-05-28",
+        "status": "Pending",
+        "priority": "Medium"
+    },
+    {
+        "id": 10,
+        "title": "Family dinner",
+        "description": "Plan and prepare a family dinner for the weekend. Decide on a menu that includes everyone's favorite dishes. Shop for fresh ingredients and start preparing in advance. Create a pleasant and festive atmosphere for the family gathering.",
+        "dueDate": "2024-05-29",
+        "status": "Pending",
+        "priority": "Low"
+    }
+]

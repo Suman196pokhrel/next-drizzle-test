@@ -1,0 +1,92 @@
+"use client"
+import { Button } from "./ui/button"
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { Separator } from "@/components/ui/separator"
+import { CiViewTable } from "react-icons/ci";
+import { CiGrid41 } from "react-icons/ci";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
+import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
+import { useState } from "react";
+
+
+
+const CardsControl = () => {
+
+    const [viewMode, setViewMode] = useState("cards")
+
+
+
+    return (
+        <section className="flex items-center space-x-5 border-2 rounded-lg p-2">
+            <TooltipProvider>
+
+                {/* NEW TODO  */}
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <Button variant={"outline"} className="flex items-center gap-2">
+                            <IoIosAddCircleOutline size={25} />
+                        </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p>Create todo</p>
+                    </TooltipContent>
+                </Tooltip>
+
+
+
+
+                <Separator orientation="vertical" className=" h-10" />
+
+
+                {/* VIEW MODE TOGGLE BUTTON  */}
+
+                <ToggleGroup type="single" value="cards" className="border-2 rounded-md ">
+
+
+                    <ToggleGroupItem value="cards">
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <div>
+                                    <CiGrid41 size={25} />
+                                </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Cards view</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </ToggleGroupItem>
+
+
+                    <ToggleGroupItem value="table">
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <div>
+                                    <CiViewTable size={25} />
+                                </div>
+
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>table view</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </ToggleGroupItem>
+
+
+
+                </ToggleGroup>
+
+
+                <Separator orientation="vertical" className=" h-10" />
+
+
+
+
+
+
+            </TooltipProvider>
+
+
+        </section>
+    )
+}
+export default CardsControl

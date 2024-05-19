@@ -15,7 +15,7 @@ const Cards = ({ todoData, searchQuery }: CardsProps) => {
 
 
     return (
-        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 ">
+        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 ">
             <AnimatePresence>
                 {filteredItems.map((data, index) => (
                     <motion.div

@@ -16,19 +16,19 @@ const SearchBar = ({ todoData, searchQuery, setSearchQuery }: SearchBarProps) =>
 
 
     return (
-        <div className="flex items-center gap-5 relative group">
+        <div className="flex items-center gap-5 w-full relative group">
             <Input
                 type="search"
                 value={searchQuery}
                 disabled={!todoData}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="search for your todos . . ."
-                className="pl-14 focus-visible:ring-0 peer focus-visible:pl-5 transition-all duration-200 bg-white drop-shadow-md " />
+                className="pl-14 h-14 focus-visible:ring-0 text-lg peer focus-visible:pl-5 transition-all duration-200 bg-white drop-shadow-md  rounded-lg" />
 
-            <div className="absolute top-3 left-5 transition-transform duration-200 peer-focus:scale-0 ">
-                <CiSearch size={20} />
+            <div className="absolute top-4 left-5 transition-transform duration-200 peer-focus:scale-0 ">
+                <CiSearch size={25} />
             </div>
-            <Button type="submit">Search</Button>
+            {/* <Button type="submit">Search</Button> */}
         </div>
     )
 }

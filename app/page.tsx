@@ -39,15 +39,17 @@ export default function Home() {
     <main className="flex flex-col min-h-screen  p-2 space-y-20">
       <NavBar />
 
-      <div className="border-2 rounded-lg flex flex-col gap-16 p-10">
+      <div className=" rounded-lg flex flex-col gap-20 p-10">
         <SearchBar todoData={todos} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
-        <CardsControl todoData={todos} />
+        <div className="flex flex-col gap-5">
+          <CardsControl todoData={todos} />
 
 
-        {!isFetching && todos && <Cards todoData={todos} searchQuery={searchQuery} />}
+          {!isFetching && todos && <Cards todoData={todos} searchQuery={searchQuery} />}
 
-        {isFetching && <CardsSkeleton />}
+          {isFetching && <CardsSkeleton />}
+        </div>
 
       </div>
     </main>

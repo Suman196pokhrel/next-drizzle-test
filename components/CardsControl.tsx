@@ -23,7 +23,7 @@ const CardsControl = ({
 
 
     return (
-        <section className="flex items-center space-x-5 border-2 rounded-lg p-2">
+        <section className="flex items-center space-x-5 border-[1px] border-gray-200 rounded-lg p-2">
             <TooltipProvider>
 
                 {/* NEW TODO  */}

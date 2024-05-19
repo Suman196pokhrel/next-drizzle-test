@@ -16,7 +16,7 @@ const TodoCard = ({
     todo
 }: TodoCardProps) => {
     return (
-        <Card className=" cursor-pointer bg-white hover:drop-shadow-xl transition-all ease-in-out duration-200 hover:scale-105">
+        <Card className=" cursor-pointer bg-white hover:drop-shadow-xl transition-all ease-in-out duration-200 hover:scale-105 ">
             <CardHeader className="pb-3">
                 <h2 className="font-bold text-2xl capitalize">{todo.title}</h2>
             </CardHeader>

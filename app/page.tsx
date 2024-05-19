@@ -8,6 +8,8 @@ import { Todo } from "@/types/todo";
 import CardsSkeleton from "@/components/CardsSkeleton";
 import { delay } from "@/utils/mocks";
 import CardsControl from "@/components/CardsControl";
+import { toast } from "sonner"
+
 
 export default function Home() {
 
@@ -23,8 +25,11 @@ export default function Home() {
 
       // SET TODOS DATA TO LOCAL STATE
       setTodos(todoData)
+      toast("Todos fetched successfully.")
     } catch (error) {
       console.log("PROBLEM FETCHING TODOS")
+      toast("Error while fetching todos.")
+
     } finally {
       setIsFetching(false)
     }
@@ -36,7 +41,7 @@ export default function Home() {
 
 
   return (
-    <main className="flex flex-col min-h-screen  p-2 space-y-32">
+    <main className="flex flex-col min-h-screen  p-2 space-y-20">
       <NavBar />
 
       <section className=" rounded-lg flex  w-full justify-center ">

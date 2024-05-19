@@ -23,13 +23,10 @@ const TodoCard = ({
             <CardContent className=" ">
                 <p className=" text-gray-500 text-sm line-clamp-2">{todo.description}</p>
             </CardContent>
-            <CardFooter className="flex items-center space-x-3 justify-between mt-3">
-                <div className="flex items-center space-x-2">
-                    <ComboboxStatus status={todo.status} />
-                    <ComboboxPriority prirority={todo.priority} />
-                </div>
-
-                <div>
+            <CardFooter className="flex items-center space-x-4  mt-3 ">
+                <ComboboxStatus status={todo.status} />
+                <ComboboxPriority prirority={todo.priority} />
+                <div className="w-1/3 ">
                     <p className=" text-slate-500 text-xs">{todo.dueDate}</p>
                 </div>
 

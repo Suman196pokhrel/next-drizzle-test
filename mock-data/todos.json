@@ -78,5 +78,85 @@
         "dueDate": "2024-05-29",
         "status": "Pending",
         "priority": "Low"
+    },
+    {
+        "id": 11,
+        "title": "Weekend hiking trip",
+        "description": "Organize a hiking trip with friends to explore the nearby trails. Pack essentials such as water, snacks, and first aid kit. Plan the route and ensure everyone is prepared for the adventure.",
+        "dueDate": "2024-06-02",
+        "status": "Pending",
+        "priority": "Medium"
+    },
+    {
+        "id": 12,
+        "title": "Home gardening",
+        "description": "Start a home gardening project to grow fresh herbs and vegetables. Prepare the soil, select suitable plants, and allocate space for the garden. Regularly water and care for the plants to ensure healthy growth.",
+        "dueDate": "2024-06-10",
+        "status": "Pending",
+        "priority": "Medium"
+    },
+    {
+        "id": 13,
+        "title": "DIY home decor",
+        "description": "Get creative with DIY home decor projects to personalize your living space. Explore ideas such as handmade wall art, upcycled furniture, and decorative accents. Gather materials and start crafting to add a unique touch to your home.",
+        "dueDate": "2024-06-15",
+        "status": "Pending",
+        "priority": "High"
+    },
+    {
+        "id": 14,
+        "title": "Fitness challenge",
+        "description": "Embark on a fitness challenge to improve health and well-being. Set goals such as running a certain distance, completing a workout program, or practicing yoga regularly. Track progress and stay motivated to achieve fitness milestones.",
+        "dueDate": "2024-06-20",
+        "status": "Pending",
+        "priority": "High"
+    },
+    {
+        "id": 15,
+        "title": "Book reading challenge",
+        "description": "Participate in a book reading challenge to explore new genres and authors. Set a reading goal for the month and select books to read. Create a cozy reading nook, set aside dedicated time for reading, and immerse yourself in captivating stories.",
+        "dueDate": "2024-06-25",
+        "status": "Pending",
+        "priority": "Medium"
+    },
+    {
+        "id": 16,
+        "title": "Digital detox weekend",
+        "description": "Unplug from digital devices and take a break from screens for a weekend. Plan activities such as outdoor walks, board games, and creative hobbies. Spend quality time with loved ones and enjoy the benefits of disconnecting from technology.",
+        "dueDate": "2024-07-01",
+        "status": "Pending",
+        "priority": "Low"
+    },
+    {
+        "id": 17,
+        "title": "Healthy meal prep",
+        "description": "Prepare nutritious meals in advance to support a healthy lifestyle. Plan balanced menus, shop for fresh ingredients, and dedicate time for cooking and portioning meals. Store prepared meals in containers for easy access throughout the week.",
+        "dueDate": "2024-07-05",
+        "status": "Pending",
+        "priority": "Medium"
+    },
+    {
+        "id": 18,
+        "title": "Language learning challenge",
+        "description": "Embark on a language learning challenge to expand linguistic skills. Choose a target language and set achievable learning goals. Practice speaking, listening, reading, and writing regularly to make steady progress.",
+        "dueDate": "2024-07-10",
+        "status": "Pending",
+        "priority": "High"
+    },
+    {
+        "id": 19,
+        "title": "Home movie marathon",
+        "description": "Host a home movie marathon with friends or family. Select a theme or genre, prepare snacks and drinks, and create a cozy viewing area. Curate a list of favorite films and enjoy a day of cinematic entertainment.",
+        "dueDate": "2024-07-15",
+        "status": "Pending",
+        "priority": "Medium"
+    },
+    {
+        "id": 20,
+        "title": "Art and craft workshop",
+        "description": "Organize an art and craft workshop to unleash creativity and imagination. Gather supplies such as paints, brushes, paper, and clay. Explore various techniques and mediums to create unique artworks.",
+        "dueDate": "2024-07-20",
+        "status": "Pending",
+        "priority": "Low"
     }
 ]

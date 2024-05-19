@@ -65,7 +65,7 @@ export function ComboboxPriority({
 
 
     return (
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 w-1/3">
             {/* <p className="text-sm text-muted-foreground">Status</p> */}
             <Popover open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>

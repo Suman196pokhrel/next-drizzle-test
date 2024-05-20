@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "083a0437-0051-48ff-a605-3c43110ff363",
         "title": "Buy groceries",
         "description": "Purchase milk, eggs, bread, and fruit from the supermarket. Ensure that the milk is low-fat and the bread is whole grain. Also, get some fresh seasonal fruits and vegetables. Don't forget to check for any discounts or special offers available.",
         "dueDate": "2024-05-20",
@@ -8,7 +8,7 @@
         "priority": "High"
     },
     {
-        "id": 2,
+        "id": "88b6c7b7-b1f5-477b-8a05-5b0c5eae6d59",
         "title": "Attend meeting",
         "description": "Zoom call with the project team at 10 AM to discuss the upcoming milestones. Prepare the necessary reports and data to present. Make sure to review the meeting agenda beforehand. Follow up with team members on their assigned tasks.",
         "dueDate": "2024-05-21",
@@ -16,7 +16,7 @@
         "priority": "Medium"
     },
     {
-        "id": 3,
+        "id": "bb617d8f-9904-4f92-83dc-4f63232de0db",
         "title": "Finish report",
         "description": "Complete the annual report and send it to the manager by the end of the day. Include all relevant statistics and analysis. Ensure that the report is thoroughly proofread and formatted correctly. Add any supplementary information that might be helpful.",
         "dueDate": "2024-05-22",
@@ -24,7 +24,7 @@
         "priority": "High"
     },
     {
-        "id": 4,
+        "id": "4e00c9e0-1e26-4936-8d6d-9c1a131d4023",
         "title": "Call plumber",
         "description": "Fix the kitchen sink leakage by contacting a professional plumber. Describe the issue in detail and set up an appointment at a convenient time. Make sure to clear the area under the sink before the plumber arrives. Check the plumber's reviews and credentials.",
         "dueDate": "2024-05-23",
@@ -32,7 +32,7 @@
         "priority": "Low"
     },
     {
-        "id": 5,
+        "id": "29b9fd3e-d7eb-4c48-b53f-95172716e5ad",
         "title": "Read book",
         "description": "Finish reading 'Atomic Habits' by James Clear. Focus on the chapters discussing habit formation and productivity. Take notes on key points and actionable advice. Reflect on how to apply these concepts to your daily routine to improve efficiency.",
         "dueDate": "2024-05-24",
@@ -40,7 +40,7 @@
         "priority": "Low"
     },
     {
-        "id": 6,
+        "id": "e18cc3ab-3163-4dc1-a5bf-b32a61e13e21",
         "title": "Exercise",
         "description": "Complete a 30-minute workout session focusing on cardio and strength training. Start with a warm-up to prevent injuries. Follow a structured plan that includes various exercises. Cool down with some stretching exercises to relax the muscles.",
         "dueDate": "2024-05-25",
@@ -48,7 +48,7 @@
         "priority": "Medium"
     },
     {
-        "id": 7,
+        "id": "2e13214d-20a4-494a-9707-cf8b143a00a5",
         "title": "Prepare presentation",
         "description": "Create slides for the upcoming client meeting. Highlight the main achievements and future plans. Ensure the slides are visually appealing and easy to understand. Rehearse the presentation to maintain a smooth flow during the actual meeting.",
         "dueDate": "2024-05-26",
@@ -56,7 +56,7 @@
         "priority": "High"
     },
     {
-        "id": 8,
+        "id": "b8283b5b-95ab-4f0b-b680-0d44f1bde96e",
         "title": "Grocery shopping",
         "description": "Restock the pantry with essentials such as rice, pasta, and canned goods. Check the current inventory to avoid overbuying. Look for organic and healthy options whenever possible. Plan meals for the week to ensure you purchase all necessary ingredients.",
         "dueDate": "2024-05-27",
@@ -64,7 +64,7 @@
         "priority": "High"
     },
     {
-        "id": 9,
+        "id": "51bc3e25-9565-454b-9e4f-5fcdfde3bcdf",
         "title": "Car maintenance",
         "description": "Take the car to the service center for routine maintenance. This includes oil change, tire rotation, and brake inspection. Make sure to mention any specific issues or unusual noises. Keep track of the service schedule to ensure timely upkeep.",
         "dueDate": "2024-05-28",
@@ -72,7 +72,7 @@
         "priority": "Medium"
     },
     {
-        "id": 10,
+        "id": "ac9bf4529-35e1-4e7c-b186-9b9c439a7dc8",
         "title": "Family dinner",
         "description": "Plan and prepare a family dinner for the weekend. Decide on a menu that includes everyone's favorite dishes. Shop for fresh ingredients and start preparing in advance. Create a pleasant and festive atmosphere for the family gathering.",
         "dueDate": "2024-05-29",
@@ -80,7 +80,7 @@
         "priority": "Low"
     },
     {
-        "id": 11,
+        "id": "4a12113e-5e26-4580-b079-5e6ab20cc013",
         "title": "Weekend hiking trip",
         "description": "Organize a hiking trip with friends to explore the nearby trails. Pack essentials such as water, snacks, and first aid kit. Plan the route and ensure everyone is prepared for the adventure.",
         "dueDate": "2024-06-02",
@@ -88,7 +88,7 @@
         "priority": "Medium"
     },
     {
-        "id": 12,
+        "id": "f8d1e99c-37e5-42b3-9f3a-d47ab9a3c940",
         "title": "Home gardening",
         "description": "Start a home gardening project to grow fresh herbs and vegetables. Prepare the soil, select suitable plants, and allocate space for the garden. Regularly water and care for the plants to ensure healthy growth.",
         "dueDate": "2024-06-10",
@@ -96,7 +96,7 @@
         "priority": "Medium"
     },
     {
-        "id": 13,
+        "id": "5e9e4c9d-b1e7-494e-aeb4-43d34b300ed1",
         "title": "DIY home decor",
         "description": "Get creative with DIY home decor projects to personalize your living space. Explore ideas such as handmade wall art, upcycled furniture, and decorative accents. Gather materials and start crafting to add a unique touch to your home.",
         "dueDate": "2024-06-15",
@@ -104,7 +104,7 @@
         "priority": "High"
     },
     {
-        "id": 14,
+        "id": "907e61b2-62c6-4b3c-8f4e-24f60fc56c84",
         "title": "Fitness challenge",
         "description": "Embark on a fitness challenge to improve health and well-being. Set goals such as running a certain distance, completing a workout program, or practicing yoga regularly. Track progress and stay motivated to achieve fitness milestones.",
         "dueDate": "2024-06-20",
@@ -112,7 +112,7 @@
         "priority": "High"
     },
     {
-        "id": 15,
+        "id": "5361a06d-7607-48bc-8e0d-0cc2c4d8afad",
         "title": "Book reading challenge",
         "description": "Participate in a book reading challenge to explore new genres and authors. Set a reading goal for the month and select books to read. Create a cozy reading nook, set aside dedicated time for reading, and immerse yourself in captivating stories.",
         "dueDate": "2024-06-25",
@@ -120,7 +120,7 @@
         "priority": "Medium"
     },
     {
-        "id": 16,
+        "id": "6fe176d3-e15e-41e3-a84b-80c151750700",
         "title": "Digital detox weekend",
         "description": "Unplug from digital devices and take a break from screens for a weekend. Plan activities such as outdoor walks, board games, and creative hobbies. Spend quality time with loved ones and enjoy the benefits of disconnecting from technology.",
         "dueDate": "2024-07-01",
@@ -128,7 +128,7 @@
         "priority": "Low"
     },
     {
-        "id": 17,
+        "id": "bf1ae517-14eb-4f7e-8d4d-98b5c7d7a3d1",
         "title": "Healthy meal prep",
         "description": "Prepare nutritious meals in advance to support a healthy lifestyle. Plan balanced menus, shop for fresh ingredients, and dedicate time for cooking and portioning meals. Store prepared meals in containers for easy access throughout the week.",
         "dueDate": "2024-07-05",
@@ -136,27 +136,11 @@
         "priority": "Medium"
     },
     {
-        "id": 18,
+        "id": "e25a49cc-e762-4019-b751-6a9242053a8e",
         "title": "Language learning challenge",
         "description": "Embark on a language learning challenge to expand linguistic skills. Choose a target language and set achievable learning goals. Practice speaking, listening, reading, and writing regularly to make steady progress.",
         "dueDate": "2024-07-10",
         "status": "Pending",
         "priority": "High"
-    },
-    {
-        "id": 19,
-        "title": "Home movie marathon",
-        "description": "Host a home movie marathon with friends or family. Select a theme or genre, prepare snacks and drinks, and create a cozy viewing area. Curate a list of favorite films and enjoy a day of cinematic entertainment.",
-        "dueDate": "2024-07-15",
-        "status": "Pending",
-        "priority": "Medium"
-    },
-    {
-        "id": 20,
-        "title": "Art and craft workshop",
-        "description": "Organize an art and craft workshop to unleash creativity and imagination. Gather supplies such as paints, brushes, paper, and clay. Explore various techniques and mediums to create unique artworks.",
-        "dueDate": "2024-07-20",
-        "status": "Pending",
-        "priority": "Low"
     }
 ]

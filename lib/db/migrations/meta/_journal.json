@@ -1,0 +1,13 @@
+{
+  "version": "6",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1716188226500,
+      "tag": "0000_refined initial table creation",
+      "breakpoints": true
+    }
+  ]
+}

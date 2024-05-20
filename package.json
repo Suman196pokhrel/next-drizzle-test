@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dstudio": "npx drizzle-kit studio"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",

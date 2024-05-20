@@ -21,13 +21,21 @@ export default function Home() {
     try {
       setIsFetching(true)
       // MOCK OPERATION THAT TAKES 2 SECONDS 
-      await delay(2000)
+      // await delay(2000)
+      const response = await fetch("http://localhost:3000/api/todo", {
+        method: "GET"
+      })
+
+
+      // Parse the JSON data from the response
+      const data = await response.json();
+
 
       // SET TODOS DATA TO LOCAL STATE
-      setTodos(todoData)
+      setTodos(data)
       toast("Todos fetched successfully.")
     } catch (error) {
-      console.log("PROBLEM FETCHING TODOS")
+      console.log("PROBLEM FETCHING TODOS", error)
       toast("Error while fetching todos.")
 
     } finally {
@@ -44,7 +52,7 @@ export default function Home() {
     <main className="flex flex-col min-h-screen  p-2 space-y-20">
       <NavBar />
 
-      <section className=" rounded-lg flex  w-full justify-center ">
+      <div className=" rounded-lg flex  w-full justify-center ">
 
         <div className="flex flex-col  gap-20 p-10  w-full xl:w-5/6">
           <SearchBar todoData={todos} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
@@ -59,7 +67,7 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
+      </div>
     </main>
   );
 }

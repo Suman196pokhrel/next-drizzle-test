@@ -3,7 +3,6 @@ import { z } from "zod"
 import { NewTodoFormSchema } from "../lib/zod/schema"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-
 // FORM UI COMPONENTS 
 import { Button } from "@/components/ui/button"
 import {
@@ -18,18 +17,22 @@ import { Input } from "@/components/ui/input"
 import { ComboboxStatus } from "./ComboboxStatus"
 import { ComboboxPriority } from "./ComboboxPriority"
 import DueDatePicker from "./DatePicker"
-
-
 // ICONS 
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { toast } from "sonner"
 import { delay } from "@/utils/mocks"
 import { MoonLoader } from "react-spinners"
+import { Dispatch, SetStateAction } from "react"
 
 
+interface FormNewTodoProps {
+    setDialogState: Dispatch<SetStateAction<boolean>>
+}
 
 
-const FormNewTodo = () => {
+const FormNewTodo = ({
+    setDialogState
+}: FormNewTodoProps) => {
     const form = useForm<z.infer<typeof NewTodoFormSchema>>({
         resolver: zodResolver(NewTodoFormSchema),
         defaultValues: {
@@ -44,8 +47,12 @@ const FormNewTodo = () => {
 
     async function onSubmit(values: z.infer<typeof NewTodoFormSchema>) {
         try {
+
+            // MOCK API CALL
             await delay(2000)
             form.reset()
+            setDialogState((prev) => !prev)
+
             toast("Successfully added new todo.")
         } catch (error) {
             toast("Something went wrong while adding new todo!.")

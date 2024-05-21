@@ -1,15 +1,14 @@
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "./ui/button"
 import { IoIosAddCircleOutline } from "react-icons/io"
-import { Todo } from "@/types/todo"
 import FormNewTodo from "./FormNewTodo"
+import { useState } from "react"
 
 interface AddTodoDialogProps {
 }
@@ -19,8 +18,9 @@ interface AddTodoDialogProps {
 const AddTodoDialog = ({
 
 }: AddTodoDialogProps) => {
+    const [open, setOpen] = useState<boolean>(false)
     return (
-        <Dialog>
+        <Dialog open={open} onOpenChange={() => setOpen(prev => !prev)}>
             <DialogTrigger asChild>
                 <Button variant={"outline"} className="flex items-center gap-2">
                     <IoIosAddCircleOutline size={25} />
@@ -31,7 +31,7 @@ const AddTodoDialog = ({
                     <DialogTitle>Create new todo</DialogTitle>
                 </DialogHeader>
 
-                <FormNewTodo />
+                <FormNewTodo setDialogState={setOpen} />
             </DialogContent>
         </Dialog>
 

@@ -45,8 +45,9 @@ const statuses: Status[] = [
 ]
 
 export function ComboboxPriority({
-    prirority
-}: { prirority: string }) {
+    prirority,
+    onChange
+}: { prirority: string, onChange: (...event: any[]) => void }) {
     const [open, setOpen] = React.useState(false)
     const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(null)
 
@@ -86,7 +87,7 @@ export function ComboboxPriority({
                 </PopoverTrigger>
                 <PopoverContent className="p-0" side="right" align="start">
                     <Command>
-                        <CommandInput placeholder="Change status..." />
+                        {/* <CommandInput placeholder="Change status..." /> */}
                         <CommandList>
                             <CommandEmpty>No results found.</CommandEmpty>
                             <CommandGroup>
@@ -95,10 +96,9 @@ export function ComboboxPriority({
                                         key={status.value}
                                         value={status.value}
                                         onSelect={(value) => {
-                                            setSelectedStatus(
-                                                statuses.find((priority) => priority.value === value) ||
-                                                null
-                                            )
+                                            const selected = statuses.find((priority) => priority.value === value) || null
+                                            setSelectedStatus(selected)
+                                            onChange(selected)
                                             setOpen(false)
                                         }}
                                     >

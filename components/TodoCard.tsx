@@ -24,8 +24,10 @@ const TodoCard = ({
                 <p className=" text-gray-500 text-sm line-clamp-2">{todo.description}</p>
             </CardContent>
             <CardFooter className="flex items-center space-x-4  mt-3 ">
-                <ComboboxStatus status={todo.status} />
-                <ComboboxPriority prirority={todo.priority} />
+
+                {/* TODO: remove combobox component , we dont allow users to edit it directly from here , instead use badges to show details */}
+                {/* <ComboboxStatus status={todo.status} /> */}
+                {/* <ComboboxPriority prirority={todo.priority} /> */}
                 <div className="w-1/3 ">
                     <p className=" text-slate-500 text-xs">{todo.dueDate}</p>
                 </div>

@@ -49,15 +49,17 @@ const statuses: Status[] = [
         icon: CheckCircle2,
     },
     {
-        value: "canceled",
+        value: "Canceled",
         label: "Canceled",
         icon: XCircle,
     },
 ]
 
 export function ComboboxStatus({
-    status
-}: { status: string }) {
+    status,
+    onChange
+
+}: { status: string, onChange: (...event: any[]) => void }) {
     const [open, setOpen] = React.useState(false)
     const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(null)
 
@@ -75,7 +77,6 @@ export function ComboboxStatus({
 
     return (
         <div className="flex items-center space-x-4 w-1/3">
-            {/* <p className="text-sm text-muted-foreground">Status</p> */}
             <Popover open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
                     <Button
@@ -104,10 +105,9 @@ export function ComboboxStatus({
                                         key={status.value}
                                         value={status.value}
                                         onSelect={(value) => {
-                                            setSelectedStatus(
-                                                statuses.find((priority) => priority.value === value) ||
-                                                null
-                                            )
+                                            const selected = statuses.find(s => s.value === value) || null
+                                            setSelectedStatus(selected)
+                                            onChange(value) // call onChange provided via react-hook-form
                                             setOpen(false)
                                         }}
                                     >

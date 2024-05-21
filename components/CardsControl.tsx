@@ -9,6 +9,7 @@ import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
 import { useState } from "react";
 import { Todo } from "@/types/todo";
 import { Skeleton } from "./ui/skeleton";
+import AddTodoDialog from "./AddTodoDialog";
 
 
 
@@ -28,24 +29,21 @@ const CardsControl = ({
 
                 {/* NEW TODO  */}
                 <Tooltip>
-                    <TooltipTrigger asChild>
-                        <Button variant={"outline"} disabled={!todoData} className="flex items-center gap-2">
-                            <IoIosAddCircleOutline size={25} />
-                        </Button>
+                    <TooltipTrigger asChild >
+                        <div>
+                            <AddTodoDialog />
+                        </div>
                     </TooltipTrigger>
                     <TooltipContent>
                         <p className=" font-medium">Create new todo</p>
                     </TooltipContent>
                 </Tooltip>
-
-
-
-
                 <Separator orientation="vertical" className=" h-10" />
 
 
-                {/* VIEW MODE TOGGLE BUTTON  */}
 
+
+                {/* VIEW MODE TOGGLE BUTTON  */}
                 {todoData ? (
                     <>
                         <ToggleGroup type="single" value={viewMode} onValueChange={(value) => setViewMode(value)} className="border-2 rounded-md ">

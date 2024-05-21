@@ -57,9 +57,10 @@ const statuses: Status[] = [
 
 export function ComboboxStatus({
     status,
-    onChange
+    onChange,
+    isSubmitting
 
-}: { status: string, onChange: (...event: any[]) => void }) {
+}: { status: string, onChange: (...event: any[]) => void, isSubmitting: boolean }) {
     const [open, setOpen] = React.useState(false)
     const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(null)
 
@@ -83,6 +84,7 @@ export function ComboboxStatus({
                         variant="outline"
                         size="sm"
                         className="w-[150px] justify-start"
+                        disabled={isSubmitting}
                     >
                         {selectedStatus ? (
                             <>
@@ -99,7 +101,7 @@ export function ComboboxStatus({
                         {/* <CommandInput placeholder="Change status..." /> */}
                         <CommandList>
                             <CommandEmpty>No results found.</CommandEmpty>
-                            <CommandGroup>
+                            <CommandGroup >
                                 {statuses.map((status) => (
                                     <CommandItem
                                         key={status.value}

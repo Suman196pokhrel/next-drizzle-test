@@ -46,8 +46,9 @@ const statuses: Status[] = [
 
 export function ComboboxPriority({
     prirority,
-    onChange
-}: { prirority: string, onChange: (...event: any[]) => void }) {
+    onChange,
+    isSubmitting
+}: { prirority: string, onChange: (...event: any[]) => void, isSubmitting: boolean }) {
     const [open, setOpen] = React.useState(false)
     const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(null)
 
@@ -74,6 +75,8 @@ export function ComboboxPriority({
                         variant="outline"
                         size="sm"
                         className="w-[150px] justify-start"
+                        disabled={isSubmitting}
+
                     >
                         {selectedStatus ? (
                             <>

@@ -22,7 +22,9 @@ import DueDatePicker from "./DatePicker"
 
 // ICONS 
 import { IoIosAddCircleOutline } from "react-icons/io";
-
+import { toast } from "sonner"
+import { delay } from "@/utils/mocks"
+import { MoonLoader } from "react-spinners"
 
 
 
@@ -40,8 +42,16 @@ const FormNewTodo = () => {
     })
 
 
-    function onSubmit(values: z.infer<typeof NewTodoFormSchema>) {
-        console.log(values)
+    async function onSubmit(values: z.infer<typeof NewTodoFormSchema>) {
+        try {
+            await delay(2000)
+            form.reset()
+            toast("Successfully added new todo.")
+        } catch (error) {
+            toast("Something went wrong while adding new todo!.")
+            console.log("ERROR OCCOURED WHILE ADDING NEW TODO => ", error)
+        }
+
     }
 
     return (
@@ -58,7 +68,11 @@ const FormNewTodo = () => {
                             <FormItem>
                                 <FormLabel>Title</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="enter a title for your todo" {...field} />
+                                    <Input
+                                        placeholder="enter a title for your todo"
+                                        disabled={form.formState.isSubmitting}
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -73,7 +87,10 @@ const FormNewTodo = () => {
                             <FormItem>
                                 <FormLabel>Description</FormLabel>
                                 <FormControl>
-                                    <Input placeholder=" . . ." {...field} />
+                                    <Input
+                                        placeholder=" . . ."
+                                        disabled={form.formState.isSubmitting}
+                                        {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -91,7 +108,7 @@ const FormNewTodo = () => {
                             <FormItem>
                                 <FormLabel>Status</FormLabel>
                                 <FormControl>
-                                    <ComboboxStatus status={field.value} onChange={field.onChange} />
+                                    <ComboboxStatus status={field.value} onChange={field.onChange} isSubmitting={form.formState.isSubmitting} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -106,7 +123,7 @@ const FormNewTodo = () => {
                             <FormItem>
                                 <FormLabel>Priority</FormLabel>
                                 <FormControl>
-                                    <ComboboxPriority prirority={field.value} onChange={field.onChange} />
+                                    <ComboboxPriority prirority={field.value} onChange={field.onChange} isSubmitting={form.formState.isSubmitting} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -122,7 +139,7 @@ const FormNewTodo = () => {
                                 <FormLabel>Due Date</FormLabel>
                                 <FormControl>
                                     <div className="w-full ">
-                                        <DueDatePicker value={field.value} onChange={field.onChange} />
+                                        <DueDatePicker value={field.value} onChange={field.onChange} isSubmitting={form.formState.isSubmitting} />
                                     </div>
                                 </FormControl>
                                 <FormMessage />
@@ -131,8 +148,11 @@ const FormNewTodo = () => {
                     />
                 </div>
 
-                <Button type="submit" className=" mt-10 h-12 flex items-center gap-2 text-lg group ">
-                    <IoIosAddCircleOutline size={25} />
+                <Button
+                    type="submit"
+                    disabled={form.formState.isSubmitting}
+                    className="w-full mt-10 h-12 flex items-center gap-2 text-lg group ">
+                    {form.formState.isSubmitting ? (<><MoonLoader size={25} color="white" /></>) : (<><IoIosAddCircleOutline size={25} /></>)}
                     Add
                 </Button>
 

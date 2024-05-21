@@ -17,12 +17,14 @@ import {
 interface DueDatePickerProps {
     value: Date
     onChange: (...event: any[]) => void
+    isSubmitting: boolean
 }
 
 
 function DueDatePicker({
     value,
-    onChange
+    onChange,
+    isSubmitting
 }: DueDatePickerProps) {
 
     return (
@@ -30,6 +32,7 @@ function DueDatePicker({
             <PopoverTrigger asChild>
                 <Button
                     variant={"outline"}
+                    disabled={isSubmitting}
                     className={cn(
                         " min-w-40 justify-start text-left font-normal",
                         !value && "text-muted-foreground"

@@ -1,8 +1,5 @@
 import { Todo } from "@/types/todo"
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card"
-import { ComboboxStatus } from "./ComboboxStatus"
-import { ComboboxPriority } from "./ComboboxPriority"
-import { motion } from "framer-motion"
 import { Badge } from "./ui/badge"
 
 

@@ -6,7 +6,7 @@ import { CiViewTable } from "react-icons/ci";
 import { CiGrid41 } from "react-icons/ci";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { Todo } from "@/types/todo";
 import { Skeleton } from "./ui/skeleton";
 import AddTodoDialog from "./AddTodoDialog";
@@ -14,9 +14,11 @@ import AddTodoDialog from "./AddTodoDialog";
 
 
 const CardsControl = ({
-    todoData
+    todoData,
+    setTodos
 }: {
     todoData: Todo[] | undefined
+    setTodos: Dispatch<SetStateAction<Todo[] | undefined>>
 }) => {
 
     const [viewMode, setViewMode] = useState("cards")
@@ -31,7 +33,7 @@ const CardsControl = ({
                 <Tooltip>
                     <TooltipTrigger asChild >
                         <div>
-                            <AddTodoDialog />
+                            <AddTodoDialog todoData={todoData} setTodos={setTodos} />
                         </div>
                     </TooltipTrigger>
                     <TooltipContent>
@@ -88,15 +90,7 @@ const CardsControl = ({
                     </div>
                 )}
 
-
-
-
                 <Separator orientation="vertical" className=" h-10" />
-
-
-
-
-
 
             </TooltipProvider>
 

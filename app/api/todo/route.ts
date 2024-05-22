@@ -29,10 +29,11 @@ export async function POST(request: Request) {
 
     // INSERT NEW DATA IN DB
     try {
-      const data = await db.insert(TodosTable).values(res);
+      const data = await db.insert(TodosTable).values(res).returning();
       return new Response(
         JSON.stringify({
           message: "SUccessfully inserted new Todo",
+          newTodo: data,
         }),
         {
           status: 200,

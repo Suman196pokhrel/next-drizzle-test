@@ -23,15 +23,20 @@ import { toast } from "sonner"
 import { delay } from "@/utils/mocks"
 import { MoonLoader } from "react-spinners"
 import { Dispatch, SetStateAction } from "react"
+import { Todo } from "@/types/todo"
 
 
 interface FormNewTodoProps {
     setDialogState: Dispatch<SetStateAction<boolean>>
+    todoData: Todo[] | undefined
+    setTodos: Dispatch<SetStateAction<Todo[] | undefined>>
 }
 
 
 const FormNewTodo = ({
-    setDialogState
+    setDialogState,
+    todoData,
+    setTodos
 }: FormNewTodoProps) => {
     const form = useForm<z.infer<typeof NewTodoFormSchema>>({
         resolver: zodResolver(NewTodoFormSchema),
@@ -59,9 +64,14 @@ const FormNewTodo = ({
             })
 
             const result = await response.json();
-            console.log(result)
             form.reset()
+            setTodos((prev) => {
+                if (prev) {
+                    return [...prev, ...result.newTodo]
+                }
+            })
             setDialogState((prev) => !prev)
+
 
             toast("Successfully added new todo.")
         } catch (error) {

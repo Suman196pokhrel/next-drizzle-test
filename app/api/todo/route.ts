@@ -21,7 +21,49 @@ export async function GET() {
 }
 
 // CREATE NEW TODO
-export async function POST() {}
+export async function POST(request: Request) {
+  try {
+    const res = await request.json();
+
+    // TODO : server side validation for request body
+
+    // INSERT NEW DATA IN DB
+    try {
+      const data = await db.insert(TodosTable).values(res).returning();
+      return new Response(
+        JSON.stringify({
+          message: "SUccessfully inserted new Todo",
+          newTodo: data,
+        }),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (dbError) {
+      console.log("Database insertion error: ", dbError);
+      return new Response(
+        JSON.stringify({ error: "Failed to insert new Todo" }),
+        {
+          status: 500,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
+  } catch (error) {
+    console.error("Request handling error:", error);
+    return new Response(JSON.stringify({ error: "Invalid request body" }), {
+      status: 400,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+}
 
 // UPDATE EXISTING TODO
 export async function PUT() {}

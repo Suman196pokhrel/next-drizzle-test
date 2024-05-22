@@ -19,13 +19,13 @@ import {
 import { IconType } from "react-icons"
 import { TbCircleLetterH, TbCircleLetterL, TbCircleLetterM } from "react-icons/tb"
 
-type Status = {
+type Priority = {
     value: string
     label: string
     icon: IconType
 }
 
-const statuses: Status[] = [
+const priorities: Priority[] = [
     {
         value: "Low",
         label: "Low",
@@ -45,20 +45,22 @@ const statuses: Status[] = [
 ]
 
 export function ComboboxPriority({
-    prirority
-}: { prirority: string }) {
+    prirority,
+    onChange,
+    isSubmitting
+}: { prirority: string, onChange: (...event: any[]) => void, isSubmitting: boolean }) {
     const [open, setOpen] = React.useState(false)
-    const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(null)
+    const [selectedPriority, setSelectedPriority] = React.useState<Priority | null>(null)
 
 
     React.useEffect(() => {
         if (prirority) {
             // CHECK WHICH STATUS IS PROVIDED BY PARENT
-            const initialPriority = statuses.find(s => s.value === prirority) || null
+            const initialPriority = priorities.find(s => s.value === prirority) || null
 
 
             // set that status as selected status 
-            setSelectedStatus(initialPriority)
+            setSelectedPriority(initialPriority)
 
         }
     }, [prirority])
@@ -73,11 +75,13 @@ export function ComboboxPriority({
                         variant="outline"
                         size="sm"
                         className="w-[150px] justify-start"
+                        disabled={isSubmitting}
+
                     >
-                        {selectedStatus ? (
+                        {selectedPriority ? (
                             <>
-                                <selectedStatus.icon className="mr-2 h-4 w-4 shrink-0" />
-                                {selectedStatus.label}
+                                <selectedPriority.icon className="mr-2 h-4 w-4 shrink-0" />
+                                {selectedPriority.label}
                             </>
                         ) : (
                             <>+ Set priority</>
@@ -86,31 +90,31 @@ export function ComboboxPriority({
                 </PopoverTrigger>
                 <PopoverContent className="p-0" side="right" align="start">
                     <Command>
-                        <CommandInput placeholder="Change status..." />
+                        {/* <CommandInput placeholder="Change status..." /> */}
                         <CommandList>
                             <CommandEmpty>No results found.</CommandEmpty>
                             <CommandGroup>
-                                {statuses.map((status) => (
+                                {priorities.map((item) => (
                                     <CommandItem
-                                        key={status.value}
-                                        value={status.value}
+                                        key={item.value}
+                                        value={item.value}
                                         onSelect={(value) => {
-                                            setSelectedStatus(
-                                                statuses.find((priority) => priority.value === value) ||
-                                                null
-                                            )
+                                            // const selected = statuses.find((priority) => priority.value === value) || null
+                                            const selected = priorities.find(s => s.value === value) || null
+                                            setSelectedPriority(selected)
+                                            onChange(value)
                                             setOpen(false)
                                         }}
                                     >
-                                        <status.icon
+                                        <item.icon
                                             className={cn(
                                                 "mr-2 h-4 w-4",
-                                                status.value === selectedStatus?.value
+                                                item.value === selectedPriority?.value
                                                     ? "opacity-100"
                                                     : "opacity-40"
                                             )}
                                         />
-                                        <span>{status.label}</span>
+                                        <span>{item.label}</span>
                                     </CommandItem>
                                 ))}
                             </CommandGroup>

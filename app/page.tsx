@@ -58,7 +58,7 @@ export default function Home() {
           <SearchBar todoData={todos} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
           <div className="flex flex-col gap-7">
-            <CardsControl todoData={todos} />
+            <CardsControl todoData={todos} setTodos={setTodos} />
 
 
             {!isFetching && todos && <Cards todoData={todos} searchQuery={searchQuery} />}

@@ -49,15 +49,18 @@ const statuses: Status[] = [
         icon: CheckCircle2,
     },
     {
-        value: "canceled",
+        value: "Canceled",
         label: "Canceled",
         icon: XCircle,
     },
 ]
 
 export function ComboboxStatus({
-    status
-}: { status: string }) {
+    status,
+    onChange,
+    isSubmitting
+
+}: { status: string, onChange: (...event: any[]) => void, isSubmitting: boolean }) {
     const [open, setOpen] = React.useState(false)
     const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(null)
 
@@ -75,13 +78,13 @@ export function ComboboxStatus({
 
     return (
         <div className="flex items-center space-x-4 w-1/3">
-            {/* <p className="text-sm text-muted-foreground">Status</p> */}
             <Popover open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
                     <Button
                         variant="outline"
                         size="sm"
                         className="w-[150px] justify-start"
+                        disabled={isSubmitting}
                     >
                         {selectedStatus ? (
                             <>
@@ -98,16 +101,15 @@ export function ComboboxStatus({
                         {/* <CommandInput placeholder="Change status..." /> */}
                         <CommandList>
                             <CommandEmpty>No results found.</CommandEmpty>
-                            <CommandGroup>
+                            <CommandGroup >
                                 {statuses.map((status) => (
                                     <CommandItem
                                         key={status.value}
                                         value={status.value}
                                         onSelect={(value) => {
-                                            setSelectedStatus(
-                                                statuses.find((priority) => priority.value === value) ||
-                                                null
-                                            )
+                                            const selected = statuses.find(s => s.value === value) || null
+                                            setSelectedStatus(selected)
+                                            onChange(value) // call onChange provided via react-hook-form
                                             setOpen(false)
                                         }}
                                     >

@@ -49,21 +49,19 @@ const FormNewTodo = ({
         try {
 
             // MOCK API CALL
-            // await delay(2000)
-            // const response = await fetch("/api/todo", {
-            //     method: "POST",
-            //     headers: {
-            //         'Content-Type': 'application-json'
-            //     },
-            //     body: JSON.stringify(values)
+            const response = await fetch("/api/todo", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application-json'
+                },
+                body: JSON.stringify(values)
 
-            // })
+            })
 
-            // const result = await response.json();
-            // console.log(result)
-            console.log(values)
-            // form.reset()
-            // setDialogState((prev) => !prev)
+            const result = await response.json();
+            console.log(result)
+            form.reset()
+            setDialogState((prev) => !prev)
 
             toast("Successfully added new todo.")
         } catch (error) {

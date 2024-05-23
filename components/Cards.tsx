@@ -1,6 +1,9 @@
 import { Todo } from "@/types/todo"
 import TodoCard from "./TodoCard"
 import { motion, AnimatePresence } from "framer-motion"
+import { Tooltip, TooltipContent } from "./ui/tooltip"
+import { TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip"
+import ViewEditDialog from "./ViewEditDialog"
 
 
 interface CardsProps {
@@ -16,20 +19,26 @@ const Cards = ({ todoData, searchQuery }: CardsProps) => {
 
     return (
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-10 ">
-            <AnimatePresence>
-                {filteredItems.map((data, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ y: 50, opacity: 0, scale: 0 }}
-                        animate={{ y: 0, opacity: 1, scale: 1 }}
-                        exit={{ y: -50, scale: 0, transition: { duration: 0.2 } }}
-                        transition={{ delay: index * (0.1 / Math.min(filteredItems.length, 20)) }}
+            <TooltipProvider>
 
-                    >
-                        <TodoCard todo={data} />
-                    </motion.div>
-                ))}
-            </AnimatePresence>
+
+                <AnimatePresence>
+                    {filteredItems.map((data, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ y: 50, opacity: 0, scale: 0 }}
+                            animate={{ y: 0, opacity: 1, scale: 1 }}
+                            exit={{ y: -50, scale: 0, transition: { duration: 0.2 } }}
+                            transition={{ delay: index * (0.1 / Math.min(filteredItems.length, 20)) }}
+
+                        >
+                            <ViewEditDialog
+                                todo={data}
+                            />
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
+            </TooltipProvider>
         </section>
     )
 }

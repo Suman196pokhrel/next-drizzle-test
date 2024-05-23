@@ -73,9 +73,9 @@ const FormNewTodo = ({
             setDialogState((prev) => !prev)
 
 
-            toast("Successfully added new todo.")
+            toast.success("Successfully added new todo.")
         } catch (error) {
-            toast("Something went wrong while adding new todo!.")
+            toast.error("Something went wrong while adding new todo!.")
             console.log("ERROR OCCOURED WHILE ADDING NEW TODO => ", error)
         }
 

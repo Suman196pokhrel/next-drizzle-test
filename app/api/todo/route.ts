@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import { TodosTable } from "@/lib/db/schema";
+import { eq } from "drizzle-orm";
 
 // FETCH ALL TODOS
 export async function GET() {
@@ -66,7 +67,7 @@ export async function POST(request: Request) {
 }
 
 // UPDATE EXISTING TODO
-export async function PUT() {}
+export async function PUT(request: Request) {}
 
 // DELETE A TODO
 export async function DELETE() {}

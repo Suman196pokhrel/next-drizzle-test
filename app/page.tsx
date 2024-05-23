@@ -33,10 +33,10 @@ export default function Home() {
 
       // SET TODOS DATA TO LOCAL STATE
       setTodos(data)
-      toast("Todos fetched successfully.")
+      toast.success("Todos fetched successfully.")
     } catch (error) {
       console.log("PROBLEM FETCHING TODOS", error)
-      toast("Error while fetching todos.")
+      toast.error("Error while fetching todos.")
 
     } finally {
       setIsFetching(false)

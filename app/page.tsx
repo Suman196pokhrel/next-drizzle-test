@@ -36,7 +36,7 @@ export default function Home() {
       toast.success("Todos fetched successfully.")
     } catch (error) {
       console.log("PROBLEM FETCHING TODOS", error)
-      toast("Error while fetching todos.")
+      toast.error("Error while fetching todos.")
 
     } finally {
       setIsFetching(false)

@@ -46,7 +46,7 @@ const TitleForm = ({
 
 
     return (
-        <div className="flex items-start justify-between w-1/2">
+        <div className={`flex ${isEditing ? 'items-start' : 'items-center'} justify-between w-3/6`}>
 
             {/* DEFAULT DATA DISPLAY WHEN USER IS NOT EDITING  */}
             {!isEditing && (
@@ -59,13 +59,12 @@ const TitleForm = ({
             {/* DISPLAY WHEN USER IS EDITING */}
             {isEditing && (
                 <Form {...form} >
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col items-start  gap-5">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col items-start  gap-2">
                         <FormField
                             control={form.control}
                             name="title"
                             render={({ field }) => (
                                 <FormItem>
-                                    {/* <FormLabel>Title</FormLabel> */}
                                     <FormControl>
                                         <Input
                                             disabled={isSubmitting}
@@ -80,7 +79,7 @@ const TitleForm = ({
 
 
 
-                        <Button type="submit" className="flex items-center gap-3" >
+                        <Button type="submit" className="flex items-center gap-3" variant={"outline"} >
                             <FaRegSave />
 
                             Save
@@ -100,13 +99,13 @@ const TitleForm = ({
                 onClick={toggleEdit}
             >
                 {isEditing ? (
-                    <Button className="flex items-center gap-3">
+                    <Button className="flex items-center gap-3" variant={"outline"}>
                         <MdClose />
 
                         Cancel
                     </Button>
                 ) : (
-                    <Button className="flex items-center gap-3">
+                    <Button className="flex items-center gap-3 text-gray-700" variant={"outline"}>
                         <FiEdit2 />
                         <p>Edit</p>
                     </Button>

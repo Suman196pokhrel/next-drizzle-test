@@ -19,7 +19,7 @@ const ViewEditDialog = ({
                     <TodoCard todo={todo} />
                 </div>
             </DialogTrigger>
-            <DialogContent className="max-w-3xl">
+            <DialogContent className="max-w-3xl h-[400px]">
                 <ViewEditDialogContent todo={todo} />
             </DialogContent>
         </Dialog>

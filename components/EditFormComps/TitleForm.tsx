@@ -32,11 +32,12 @@ const TitleForm = ({
 }: TitleFormProps) => {
 
     const router = useRouter()
+    const [fieldValue, setFieldValue] = useState(todo.title)
     const [isEditing, setIsEditing] = useState<boolean>(false)
     const form = useForm<z.infer<typeof TodoTitleSchema>>({
         resolver: zodResolver(TodoTitleSchema),
         defaultValues: {
-            title: todo.title
+            title: fieldValue
         }
     })
 
@@ -49,7 +50,7 @@ const TitleForm = ({
             await axios.patch(`/api/todo/${todo.id}`, values)
             toast.success("Todo updated")
             toggleEdit()
-            router.refresh()
+            setFieldValue(values.title)
 
         } catch (error) {
             toast.error("Something went wrong")
@@ -65,7 +66,7 @@ const TitleForm = ({
             {/* DEFAULT DATA DISPLAY WHEN USER IS NOT EDITING  */}
             {!isEditing && (
                 <DialogHeader className=" font-bold text-2xl">
-                    {todo.title}
+                    {fieldValue}
                 </DialogHeader>
             )}
 

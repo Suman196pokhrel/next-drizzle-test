@@ -13,6 +13,9 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "../ui/input"
 import { MdClose } from "react-icons/md";
 import { FaRegSave } from "react-icons/fa";
+import axios from "axios"
+import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
 
 
@@ -28,6 +31,7 @@ const TitleForm = ({
     todo
 }: TitleFormProps) => {
 
+    const router = useRouter()
     const [isEditing, setIsEditing] = useState<boolean>(false)
     const form = useForm<z.infer<typeof TodoTitleSchema>>({
         resolver: zodResolver(TodoTitleSchema),
@@ -40,7 +44,17 @@ const TitleForm = ({
     const toggleEdit = () => setIsEditing((prev) => !prev)
 
     async function onSubmit(values: z.infer<typeof TodoTitleSchema>) {
-        console.log(values)
+        try {
+
+            await axios.patch(`/api/todo/${todo.id}`, values)
+            toast.success("Todo updated")
+            toggleEdit()
+            router.refresh()
+
+        } catch (error) {
+            toast.error("Something went wrong")
+            console.log("ERROR WHILE UPDATING TODO ", error)
+        }
     }
 
 
@@ -79,7 +93,12 @@ const TitleForm = ({
 
 
 
-                        <Button type="submit" className="flex items-center gap-3" variant={"outline"} >
+                        <Button
+                            type="submit"
+                            className="flex items-center gap-3"
+                            variant={"outline"}
+                            disabled={isSubmitting}
+                        >
                             <FaRegSave />
 
                             Save
@@ -99,13 +118,22 @@ const TitleForm = ({
                 onClick={toggleEdit}
             >
                 {isEditing ? (
-                    <Button className="flex items-center gap-3" variant={"outline"}>
+                    <Button
+                        className="flex items-center gap-3"
+                        variant={"outline"}
+                        disabled={isSubmitting}
+
+                    >
                         <MdClose />
 
                         Cancel
                     </Button>
                 ) : (
-                    <Button className="flex items-center gap-3 text-gray-700" variant={"outline"}>
+                    <Button
+                        className="flex items-center gap-3 text-gray-700"
+                        variant={"outline"}
+                        disabled={isSubmitting}
+                    >
                         <FiEdit2 />
                         <p>Edit</p>
                     </Button>

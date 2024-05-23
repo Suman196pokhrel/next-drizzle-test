@@ -1,15 +1,16 @@
+import { Todo } from "@/types/todo"
 
 interface DueDateFormProps {
-    dueDate: string
+    todo: Todo
 }
 
 
 const DueDateForm = ({
-    dueDate
+    todo
 }: DueDateFormProps) => {
     return (
         <div className="w-1/3 ">
-            <p className=" text-slate-500 text-xs">{dueDate}</p>
+            <p className=" text-slate-500 text-xs">{todo.dueDate}</p>
         </div>
     )
 }

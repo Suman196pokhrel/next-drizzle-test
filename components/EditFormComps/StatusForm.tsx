@@ -1,16 +1,17 @@
+import { Todo } from "@/types/todo"
 import { Badge } from "../ui/badge"
 
 
 interface StatusFormProps {
-    status: string
+    todo: Todo
 }
 
 
 const StatusForm = ({
-    status
+    todo
 }: StatusFormProps) => {
     return (
-        <Badge variant={"outline"}>{status}</Badge>
+        <Badge variant={"outline"}>{todo.status}</Badge>
     )
 }
 export default StatusForm

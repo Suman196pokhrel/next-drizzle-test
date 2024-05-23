@@ -18,14 +18,14 @@ const ViewEditDialogContent = ({
     return (
         <div className="flex flex-col items-start gap-5">
 
-            <TitleForm title={todo.title} />
+            <TitleForm todo={todo} />
 
-            <DescriptionForm description={todo.description} />
+            <DescriptionForm todo={todo} />
 
             <DialogFooter className="flex items-center gap-5">
-                <StatusForm status={todo.status} />
-                <PriorityForm priority={todo.priority} />
-                <DueDateForm dueDate={todo.dueDate} />
+                <StatusForm todo={todo} />
+                <PriorityForm todo={todo} />
+                <DueDateForm todo={todo} />
             </DialogFooter>
         </div>
     )

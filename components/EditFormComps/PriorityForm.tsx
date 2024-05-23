@@ -1,15 +1,16 @@
+import { Todo } from "@/types/todo"
 import { Badge } from "../ui/badge"
 
 interface PriorityFormProps {
-    priority: string
+    todo: Todo
 }
 
 
 const PriorityForm = ({
-    priority
+    todo
 }: PriorityFormProps) => {
     return (
-        <Badge variant={"outline"}>{priority}</Badge>
+        <Badge variant={"outline"}>{todo.priority}</Badge>
     )
 }
 export default PriorityForm

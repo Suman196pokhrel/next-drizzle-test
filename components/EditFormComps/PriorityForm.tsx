@@ -1,6 +1,15 @@
-const PriorityForm = () => {
+import { Badge } from "../ui/badge"
+
+interface PriorityFormProps {
+    priority: string
+}
+
+
+const PriorityForm = ({
+    priority
+}: PriorityFormProps) => {
     return (
-        <div>PriorityForm</div>
+        <Badge variant={"outline"}>{priority}</Badge>
     )
 }
 export default PriorityForm

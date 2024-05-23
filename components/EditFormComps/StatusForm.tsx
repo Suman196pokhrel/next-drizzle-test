@@ -1,6 +1,16 @@
-const StatusForm = () => {
+import { Badge } from "../ui/badge"
+
+
+interface StatusFormProps {
+    status: string
+}
+
+
+const StatusForm = ({
+    status
+}: StatusFormProps) => {
     return (
-        <div>StatusForm</div>
+        <Badge variant={"outline"}>{status}</Badge>
     )
 }
 export default StatusForm

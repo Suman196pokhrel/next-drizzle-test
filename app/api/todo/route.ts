@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import { TodosTable } from "@/lib/db/schema";
+import { eq } from "drizzle-orm";
 
 // FETCH ALL TODOS
 export async function GET() {
@@ -66,7 +67,51 @@ export async function POST(request: Request) {
 }
 
 // UPDATE EXISTING TODO
-export async function PUT() {}
+export async function PUT(request: Request) {
+  try {
+    const formData = await request.json();
+
+    // TODO : server side validation for request body
+
+    // INSERT NEW DATA IN DB
+    try {
+      await db
+        .update(TodosTable)
+        .set(formData)
+        .where(eq(TodosTable.id, formData.id));
+      return new Response(
+        JSON.stringify({
+          message: "SUccessfully updated  Todo",
+        }),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (dbError) {
+      console.log("Database updation error: ", dbError);
+      return new Response(
+        JSON.stringify({ error: "Failed to update new Todo" }),
+        {
+          status: 500,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
+  } catch (error) {
+    console.error("Request handling error:", error);
+    return new Response(JSON.stringify({ error: "Invalid request body" }), {
+      status: 400,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+}
 
 // DELETE A TODO
 export async function DELETE() {}

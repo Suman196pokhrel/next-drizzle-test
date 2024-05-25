@@ -16,6 +16,7 @@ import { FaRegSave } from "react-icons/fa";
 import axios from "axios"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
+import ToggleEditButton from "./ToggleEditButton"
 
 
 
@@ -112,34 +113,10 @@ const TitleForm = ({
             )}
 
 
-
             {/* BUTTON TO EDIT / CANCLE  */}
-            <div
-                className=""
-                onClick={toggleEdit}
-            >
-                {isEditing ? (
-                    <Button
-                        className="flex items-center gap-3"
-                        variant={"outline"}
-                        disabled={isSubmitting}
+            <ToggleEditButton isEditing={isEditing} isSubmitting={isSubmitting} toggleEdit={toggleEdit} />
 
-                    >
-                        <MdClose />
 
-                        Cancel
-                    </Button>
-                ) : (
-                    <Button
-                        className="flex items-center gap-3 text-gray-700"
-                        variant={"outline"}
-                        disabled={isSubmitting}
-                    >
-                        <FiEdit2 />
-                        <p>Edit</p>
-                    </Button>
-                )}
-            </div>
 
 
 

@@ -26,7 +26,9 @@ const ViewEditDialogContent = ({
 
             <DialogFooter className="flex items-center gap-5">
                 {/* <StatusForm todo={todo} /> */}
-                <ComboboxStatus status={todo.status} onChange={() => console.log("Status changes")} isSubmitting={false} />
+                {/* <ComboboxStatus status={todo.status} onChange={() => console.log("Status changes")} isSubmitting={false} /> */}
+                <StatusForm todo={todo} />
+
                 {/* <PriorityForm todo={todo} /> */}
                 <ComboboxPriority prirority={todo.priority} onChange={() => console.log("Status changes")} isSubmitting={false} />
 

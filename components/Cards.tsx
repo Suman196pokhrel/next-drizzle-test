@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Tooltip, TooltipContent } from "./ui/tooltip"
 import { TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip"
 import ViewEditDialog from "./ViewEditDialog"
+import { useRouter } from "next/navigation"
 
 
 interface CardsProps {
@@ -15,30 +16,31 @@ const Cards = ({ todoData, searchQuery }: CardsProps) => {
 
 
     const filteredItems = todoData.filter((item) => item.title.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()))
-
+    const router = useRouter()
 
     return (
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-10 ">
-            <TooltipProvider>
+            {/* <TooltipProvider> */}
 
 
-                <AnimatePresence>
-                    {filteredItems.map((data, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ y: 50, opacity: 0, scale: 0 }}
-                            animate={{ y: 0, opacity: 1, scale: 1 }}
-                            exit={{ y: -50, scale: 0, transition: { duration: 0.2 } }}
-                            transition={{ delay: index * (0.1 / Math.min(filteredItems.length, 20)) }}
+            <AnimatePresence>
+                {filteredItems.map((data, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ y: 50, opacity: 0, scale: 0 }}
+                        animate={{ y: 0, opacity: 1, scale: 1 }}
+                        exit={{ y: -50, scale: 0, transition: { duration: 0.2 } }}
+                        transition={{ delay: index * (0.1 / Math.min(filteredItems.length, 20)) }}
 
-                        >
-                            <ViewEditDialog
-                                todo={data}
-                            />
-                        </motion.div>
-                    ))}
-                </AnimatePresence>
-            </TooltipProvider>
+                    >
+                        <ViewEditDialog
+                            todo={data}
+                            listRouter={router}
+                        />
+                    </motion.div>
+                ))}
+            </AnimatePresence>
+            {/* </TooltipProvider> */}
         </section>
     )
 }

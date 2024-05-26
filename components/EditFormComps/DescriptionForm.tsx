@@ -57,11 +57,11 @@ const DescriptionForm = ({
 
     return (
         // <div className=" text-slate-600 text-sm p-2 bg-gray-100 rounded-lg">
-        <div className={`flex ${isEditing ? 'items-start' : 'items-center'} justify-between w-3/6`}>
+        <div className={`flex ${isEditing ? 'items-start' : 'items-center'} justify-between  w-11/12`}>
 
             {/* DEFAULT DATA DISPLAY WHEN USER IS NOT EDITING  */}
             {!isEditing && (
-                <DialogDescription className=" font-bold text-2xl bg">
+                <DialogDescription className=" text-md text-gray-700 bg text-justify w-10/12">
                     {fieldValue}
                 </DialogDescription>
             )}

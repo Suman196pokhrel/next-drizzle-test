@@ -2,18 +2,24 @@ import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog"
 import { Todo } from "@/types/todo"
 import TodoCard from "./TodoCard"
 import ViewEditDialogContent from "./ViewEditDialogContent"
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime"
 
 interface ViewEditDialogProps {
     todo: Todo
+    listRouter: AppRouterInstance
 }
 
 const ViewEditDialog = ({
-    todo
+    todo,
+    listRouter
 }: ViewEditDialogProps) => {
 
 
     return (
-        <Dialog >
+        <Dialog onOpenChange={(value) => {
+            listRouter.refresh()
+            return !value
+        }}>
             <DialogTrigger asChild >
                 <div>
                     <TodoCard todo={todo} />

@@ -62,7 +62,7 @@ const TitleForm = ({
 
 
     return (
-        <div className={`flex ${isEditing ? 'items-start' : 'items-center'} justify-between w-3/6`}>
+        <div className={`flex ${isEditing ? 'items-start' : 'items-center'} justify-between w-11/12`}>
 
             {/* DEFAULT DATA DISPLAY WHEN USER IS NOT EDITING  */}
             {!isEditing && (

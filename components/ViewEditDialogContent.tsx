@@ -29,7 +29,10 @@ const ViewEditDialogContent = ({
                 <ComboboxStatus status={todo.status} onChange={() => console.log("Status changes")} isSubmitting={false} />
                 {/* <PriorityForm todo={todo} /> */}
                 <ComboboxPriority prirority={todo.priority} onChange={() => console.log("Status changes")} isSubmitting={false} />
+
+
                 <DueDateForm todo={todo} />
+
             </DialogFooter>
         </div>
     )

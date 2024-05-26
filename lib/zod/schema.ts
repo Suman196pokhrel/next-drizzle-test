@@ -1,7 +1,7 @@
 "use client";
 import { string, z } from "zod";
 
-const StatusEnum = z.enum(["Pending", "Completed", "InProgress"]);
+const StatusEnum = z.enum(["Pending", "Completed", "InProgress", "Canceled"]);
 const PriorityEnum = z.enum(["Low", "Medium", "High"]);
 
 export const NewTodoFormSchema = z.object({
